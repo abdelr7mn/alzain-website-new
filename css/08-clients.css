@@ -1,0 +1,8 @@
+.clients{border-block:1px solid var(--concrete-2);padding-block:2rem;background:var(--paper);}
+.clients-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 0;}
+.client-name{flex:1 1 auto;text-align:center;font-family:var(--font-display);font-weight:600;font-size:1.05rem;color:var(--ink-soft);padding-inline:1.25rem;}
+.client-name + .client-name{border-inline-start:1px solid var(--concrete-2);}
+@media (max-width:640px){
+  .client-name{flex:1 1 33%;font-size:.95rem;padding-inline:.5rem;}
+  .client-name:nth-child(4){border-inline-start:none;}
+}

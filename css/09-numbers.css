@@ -1,0 +1,12 @@
+.numbers{background:var(--asphalt);color:var(--on-dark);padding-block:clamp(3.5rem,8vw,6rem);}
+.numbers-grid{display:grid;grid-template-columns:repeat(5,1fr);}
+.number-card{padding-inline:1.25rem;}
+.number-card + .number-card{border-inline-start:3px dashed var(--paint);}
+.number-card .num{direction:ltr;text-align:right;font-family:var(--font-display);font-weight:800;font-size:clamp(2.2rem,4.2vw,3.5rem);line-height:1.2;color:var(--paint);}
+.number-card .label{margin-top:.35rem;font-size:.97rem;line-height:1.6;color:var(--on-dark-soft);max-width:16ch;}
+@media (max-width:980px){
+  .numbers-grid{grid-template-columns:repeat(2,1fr);row-gap:2.5rem;}
+  .number-card:nth-child(odd){border-inline-start:none;}
+  .number-card:nth-child(even){border-inline-start:3px dashed var(--paint);}
+  .number-card:nth-child(5){grid-column:1 / -1;}
+}

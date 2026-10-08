@@ -1,0 +1,80 @@
+/* ============================================================
+   TOKENS — الباليت المعتمدة: أصفر #FFC107 + داكن #1E1E1E + أبيض + رمادي #F4F4F5
+   ============================================================ */
+:root{
+  --concrete:#F4F4F5;
+  --concrete-2:#DCDCDF;
+  --paper:#FFFFFF;
+  --white:#FFFFFF;
+
+  --asphalt:#1E1E1E;
+  --asphalt-2:#2F2F31;
+
+  /* "sign" صار الداكن: الأزرار والأقسام الداكنة */
+  --sign:#1E1E1E;
+  --sign-deep:#000000;
+
+  --paint:#FFC107;
+  --paint-deep:#E0A800;
+
+  --ink:#1E1E1E;
+  --ink-soft:#55555A;
+  --on-dark:#FFFFFF;
+  --on-dark-soft:#BDBDC0;
+
+  --font-display:'Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;
+  --font-body:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+
+  --container:1200px;
+  --gutter:clamp(1.25rem,4vw,2.5rem);
+  --radius:14px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;}
+body{
+  font-family:var(--font-body);
+  font-size:1.0625rem;
+  line-height:1.85;
+  background:var(--paper);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button,input,select,textarea{font:inherit;color:inherit;}
+button{cursor:pointer;border:none;background:none;}
+ul{list-style:none;}
+
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.35;}
+h2{font-size:clamp(1.9rem,3.6vw,2.8rem);max-width:26ch;}
+h3{font-size:1.35rem;}
+h4{font-size:1.1rem;}
+
+.container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter);}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+:focus-visible{outline:3px solid var(--paint);outline-offset:3px;box-shadow:0 0 0 6px var(--ink);}
+
+/* أزرار */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  padding:.8rem 1.6rem;border-radius:12px;
+  font-weight:600;font-size:1rem;line-height:1.5;
+  border:2px solid transparent;
+  transition:background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);
+}
+.btn-paint{background:var(--paint);color:var(--ink);}
+.btn-paint:hover{background:var(--paint-deep);}
+.btn-sign{background:var(--sign);color:var(--white);}
+.btn-sign:hover{background:var(--sign-deep);}
+.btn-line{border-color:rgba(255,255,255,.65);color:var(--white);}
+.btn-line:hover{background:var(--white);color:var(--ink);border-color:var(--white);}
+.btn-sign:hover{color:var(--paint);}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-delay:0s !important;transition-duration:.001ms !important;animation-iteration-count:1 !important;}
+}

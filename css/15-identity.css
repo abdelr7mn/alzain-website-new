@@ -1,0 +1,30 @@
+/* ============================================================
+   هوية الدعاية والطباعة: هاف-تون، علامات القص والتسجيل، شبكة التصميم،
+   شريط التحذير، وصور خدمات مرسومة (images/*.svg — بدّلها بصورك)
+   ============================================================ */
+
+/* ---- خلفيات الأقسام ---- */
+.about,.contact{background-image:linear-gradient(rgba(30,30,30,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(30,30,30,.05) 1px,transparent 1px);background-size:44px 44px;}
+.about{background-color:var(--paper);} .contact{background-color:var(--concrete);}
+
+.services,.numbers{position:relative;overflow:hidden;}
+.services::before,.numbers::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(255,193,7,.2) 2px,transparent 2.6px);background-size:22px 22px;
+  -webkit-mask-image:linear-gradient(to left,#000,transparent 50%);mask-image:linear-gradient(to left,#000,transparent 50%);}
+.numbers::before{-webkit-mask-image:linear-gradient(to right,#000,transparent 55%);mask-image:linear-gradient(to right,#000,transparent 55%);}
+.services > .container,.numbers > .container{position:relative;}
+
+/* شريط التحذير (زي معدات الطرق) فوق الأرقام والفوتر */
+.numbers,.site-footer{border-top:16px solid transparent;border-image:repeating-linear-gradient(135deg,var(--paint) 0 14px,var(--ink) 14px 28px) 16;}
+
+/* ---- صور الخدمات ---- */
+.service-row{grid-template-columns:7.5rem minmax(0,1fr) minmax(0,1.1fr) auto;}
+.service-art{width:7.5rem;height:auto;border-radius:12px;transition:transform .35s var(--ease);}
+.service-row:hover .service-art{transform:rotate(-4deg) scale(1.08);}
+@media (max-width:820px){.service-row{grid-template-columns:1fr;}.service-art{width:6rem;margin-bottom:.5rem;}}
+
+/* ---- شريط CMYK (بروفة طباعة) ---- */
+.cmyk{display:inline-flex;gap:3px;vertical-align:middle;margin-inline-end:.75rem;}
+.cmyk i{width:14px;height:14px;display:block;border-radius:2px;}
+.cmyk i:nth-child(1){background:#00AEEF;} .cmyk i:nth-child(2){background:#EC008C;}
+.cmyk i:nth-child(3){background:var(--paint);} .cmyk i:nth-child(4){background:#000;box-shadow:0 0 0 1px #555;}

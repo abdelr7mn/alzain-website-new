@@ -1,0 +1,69 @@
+/* ============================================================
+   ألوان وتفاصيل إضافية: ألوان الطباعة (سماوي + ماجنتا) بجانب الأصفر والداكن
+   ============================================================ */
+:root{--cyan:#00AEEF;--magenta:#EC008C;}
+
+/* ---- لوحة الهيرو كأنها إعلان مطبوع: رسمة CMYK + حُبيبات ورق ---- */
+.panel::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .7 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");opacity:.16;mix-blend-mode:multiply;}
+.panel-art{position:absolute;z-index:0;left:clamp(1.5rem,4vw,3.5rem);top:50%;width:clamp(150px,25%,290px);
+  transform:translateY(-58%) rotate(-5deg);animation:art-float 6s ease-in-out infinite alternate,fade-in .9s var(--ease) 1s both;}
+.panel-art svg{display:block;width:100%;height:auto;}
+.panel h1,.panel-meta{position:relative;z-index:1;}
+@keyframes art-float{from{translate:0 -6px;}to{translate:0 8px;}}
+@media (max-width:760px){.panel-art{width:96px;top:auto;bottom:4.5rem;left:1.25rem;transform:rotate(-5deg);opacity:.9;}}
+
+/* ---- سطر العناوين: ذيل بألوان الطباعة ---- */
+.section-head::before{background:linear-gradient(to left,var(--ink) 0 86%,var(--cyan) 86% 90.5%,var(--magenta) 90.5% 95%,var(--paint) 95% 100%);}
+.section-head.on-dark::before{background:linear-gradient(to left,#fff 0 86%,var(--cyan) 86% 90.5%,var(--magenta) 90.5% 95%,var(--paint) 95% 100%);}
+
+/* ---- الشريط المتحرك: معينات متعددة الألوان ---- */
+.ticker-track b:nth-child(3n+2)::after{background:var(--magenta);}
+.ticker-track b:nth-child(3n)::after{background:var(--cyan);}
+
+/* ---- من نحن: صورة كأنها ملصق مثبّت بشريط لاصق ---- */
+.about-figure img{box-shadow:-14px 14px 0 var(--ink);}
+.about-figure::before,.about-figure::after{content:"";position:absolute;z-index:1;width:96px;height:28px;background:rgba(255,193,7,.88);box-shadow:0 1px 3px rgba(0,0,0,.2);}
+.about-figure::before{top:-12px;right:26px;transform:rotate(5deg);}
+.about-figure::after{top:-10px;left:26px;transform:rotate(-6deg);background:rgba(236,0,140,.85);}
+
+/* ---- الأعمال: وسم بلون لكل تصنيف ---- */
+.work-card .work-tag{border-color:var(--ink);color:var(--ink);font-weight:700;}
+.work-card[data-cat="billboard"] .work-tag{background:var(--paint);}
+.work-card[data-cat="signage"] .work-tag{background:var(--cyan);}
+.work-card[data-cat="print"] .work-tag{background:var(--magenta);color:#fff;}
+.work-card[data-cat="billboard"] .work-media{box-shadow:6px 6px 0 var(--paint);}
+.work-card[data-cat="signage"] .work-media{box-shadow:6px 6px 0 var(--cyan);}
+.work-card[data-cat="print"] .work-media{box-shadow:6px 6px 0 var(--magenta);}
+
+/* ---- كيف نعمل: دوائر بألوان الطباعة ---- */
+.process-step:nth-child(1) .step-num{background:var(--paint);color:var(--ink);}
+.process-step:nth-child(2) .step-num{background:var(--cyan);color:var(--ink);}
+.process-step:nth-child(3) .step-num{background:var(--magenta);color:#fff;}
+.process-step:nth-child(4) .step-num{background:var(--ink);color:var(--paint);}
+.step-num{border:3px solid var(--ink);}
+
+/* ---- العملاء: نقطة لون قبل كل اسم ---- */
+.client-name::before{content:"";display:inline-block;width:.6rem;height:.6rem;margin-inline-end:.6rem;border-radius:50%;background:var(--paint);}
+.client-name:nth-child(3n+2)::before{background:var(--cyan);}
+.client-name:nth-child(3n)::before{background:var(--magenta);}
+
+/* ---- الأرقام: لون لكل رقم ---- */
+.number-card:nth-child(2) .num{color:var(--cyan);}
+.number-card:nth-child(3) .num{color:var(--magenta);}
+.number-card:nth-child(4) .num{color:#fff;}
+
+/* ---- آراء العملاء: علامة اقتباس ماجنتا + تمييز بالقلم الأصفر ---- */
+.testimonial.featured .quote::before{color:var(--magenta);}
+.testimonial-person strong{background:linear-gradient(transparent 58%,var(--paint) 58%);padding-inline:.25rem;align-self:flex-start;}
+
+/* ---- أزرار وتفاصيل صغيرة ---- */
+.btn-paint{box-shadow:4px 4px 0 var(--cyan);}
+.btn-paint:hover{box-shadow:6px 6px 0 var(--magenta);}
+.btn-sign{box-shadow:4px 4px 0 var(--paint);}
+.btn-sign:hover{box-shadow:6px 6px 0 var(--magenta);}
+.btn-line,.service-go{box-shadow:none;}
+.filter-btn.active{box-shadow:3px 3px 0 var(--magenta);}
+.contact-info .social-pill:nth-child(2):hover{background:var(--cyan);border-color:var(--ink);color:var(--ink);}
+.contact-info .social-pill:nth-child(3):hover{background:var(--magenta);border-color:var(--ink);color:#fff;}
+@media (prefers-reduced-motion:reduce){.panel-art{animation:none;}}

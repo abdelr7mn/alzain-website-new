@@ -1,0 +1,39 @@
+.contact{background:var(--concrete);padding-block:clamp(4rem,9vw,7.5rem);}
+.contact-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(1.5rem,4vw,3rem);align-items:stretch;}
+
+.contact-info{
+  background:var(--paint);color:var(--ink);border-radius:20px;padding:clamp(2rem,4vw,3rem);
+  box-shadow:inset 0 0 0 9px var(--paint),inset 0 0 0 12px var(--ink);
+}
+.contact-info h3{font-size:1.5rem;margin-bottom:1.25rem;padding-inline:.25rem;}
+.info-row{padding:1rem .25rem;border-top:1px dashed rgba(30,30,30,.45);}
+.info-row h5{font-size:.88rem;font-weight:500;color:rgba(30,30,30,.78);}
+.info-row a,.info-row p{font-size:1.1rem;font-weight:600;}
+.info-row a:hover{text-decoration:underline;text-underline-offset:4px;}
+.socials{display:flex;gap:.6rem;margin-top:1rem;padding-inline:.25rem;}
+.social-pill{display:grid;place-items:center;width:2.7rem;height:2.7rem;border-radius:10px;border:2px solid var(--ink);font-weight:600;font-size:.9rem;transition:background-color .2s var(--ease),color .2s var(--ease);}
+.social-pill:hover{background:var(--ink);border-color:var(--ink);color:var(--paint);}
+
+.form-card{background:var(--white);border-radius:20px;padding:clamp(1.75rem,4vw,2.75rem);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.25rem;}
+.field{margin-bottom:1.1rem;}
+.field label{display:block;font-weight:600;font-size:.95rem;margin-bottom:.35rem;}
+.field input,.field select,.field textarea{
+  width:100%;padding:.75rem .9rem;border:2px solid var(--concrete-2);border-radius:10px;background:var(--paper);
+  transition:border-color .2s var(--ease),background-color .2s var(--ease);
+}
+.field textarea{min-height:8.5rem;resize:vertical;}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:#b9c0b7;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);background:var(--white);}
+.err-msg{display:none;margin-top:.3rem;font-size:.88rem;font-weight:500;color:#B3261E;}
+.field.error input,.field.error textarea{border-color:#B3261E;}
+.field.error .err-msg{display:block;}
+.form-submit{width:100%;margin-top:.25rem;}
+.form-note{margin-top:.9rem;font-size:.88rem;color:var(--ink-soft);}
+.form-success{display:none;padding:1.25rem;border-radius:12px;background:#FFF3CD;color:var(--ink);font-weight:600;}
+.form-card.submitted form{display:none;}
+.form-card.submitted .form-success{display:block;}
+
+@media (max-width:900px){.contact-grid{grid-template-columns:minmax(0,1fr);}}
+@media (max-width:560px){.form-row{grid-template-columns:1fr;gap:0;}}
+.info-row .ltr-val{display:inline-block;}

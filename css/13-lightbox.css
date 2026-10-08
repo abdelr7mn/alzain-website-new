@@ -1,0 +1,8 @@
+.lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:1.25rem;background:rgba(27,32,36,.92);}
+.lightbox.open{display:flex;}
+.lightbox-inner{display:flex;flex-direction:column;width:min(92vw,820px);max-height:92vh;background:var(--paper);border-radius:16px;overflow:hidden;}
+.lightbox-media{background:var(--asphalt);display:grid;place-items:center;min-height:0;}
+.lightbox-media img{max-height:68vh;width:100%;object-fit:contain;}
+.lightbox-body{padding:1.25rem 1.5rem 1.5rem;}
+.lightbox-body h4{font-size:1.3rem;margin:.4rem 0 .2rem;}
+.lightbox-close{position:absolute;top:1rem;inset-inline-start:1rem;width:2.8rem;height:2.8rem;border-radius:10px;background:var(--paint);color:var(--ink);font-size:1.2rem;font-weight:700;}
